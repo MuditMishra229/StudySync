@@ -1,0 +1,39 @@
+# ByteBuilders – StudySync
+## Team Testing & Feedback Form
+
+**Project:** StudySync – Student Study Planner  
+**Team:** ByteBuilders
+
+### Tester Information
+- Tester Name:
+- Date of Testing:
+- Device: Laptop / Desktop / Mobile
+- Browser:
+
+### 1. Functionality Testing
+- Does adding a task work?
+- Does editing a task work?
+- Does deleting a task work?
+- Does marking a task complete work?
+- Does the Weekly Planner save study sessions?
+- Does the Progress Tracker update correctly?
+- Does Upcoming Deadlines display correctly?
+
+### 2. Design & Usability
+- Is the website easy to navigate?
+- Does the design look attractive?
+- Is the text readable?
+- Does the website work properly on mobile?
+
+### 3. Bugs or Problems
+Describe any errors or unexpected behaviour:
+
+### 4. Suggestions
+What improvements would you recommend?
+
+### 5. Overall Rating
+Rate StudySync out of 10:
+
+### Final Feedback
+Would you recommend this website to other students? Why?
+

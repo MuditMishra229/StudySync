@@ -1,0 +1,1666 @@
+
+/* General page styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6fb;
+    color: #263247;
+}
+
+/* Main layout */
+.app {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: linear-gradient(180deg, #172554, #1e3a8a);
+    color: white;
+    padding: 30px 20px;
+    flex-shrink: 0;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar h2 {
+    font-size: 25px;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar nav a {
+    display: block;
+font-size: 14px;
+font-weight: 500;
+letter-spacing: 0.3px;
+    color: #dbeafe;
+    text-decoration: none;
+    padding: 13px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sidebar nav a:hover {
+    background-color: #334b83;
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    padding: 35px;
+    min-width: 0;
+}
+
+/* Top navigation */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.topbar h2 {
+    font-size: 23px;
+}
+
+/* Welcome section */
+.welcome {
+    background: linear-gradient(120deg, #2563eb, #7c3aed);
+    color: white;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.welcome p {
+    color: #e0e7ff;
+    line-height: 1.6;
+}
+
+/* Statistics cards */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5eaf2;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.stat-card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+/* Other sections */
+.tasks-section,
+.planner-section,
+.progress-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    border: 1px solid #e5eaf2;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.tasks-section h2,
+.planner-section h2,
+.progress-section h2 {
+    margin-bottom: 15px;
+    color: #172554;
+}
+
+.tasks-section p,
+.planner-section p,
+.progress-section p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 15px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar nav a {
+        .nav-icon {
+    display: inline-block;
+    width: 25px;
+    font-size: 19px;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 8px;
+}
+        padding: 9px;
+        font-size: 13px;
+    }
+
+    .main-content {
+        padding: 18px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome h1 {
+        font-size: 23px;
+    }
+}
+
+
+/* Task Form Styling */
+
+#taskForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 22px;
+}
+
+#taskForm input,
+#taskForm select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dbe2ef;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #263247;
+    outline: none;
+}
+
+#taskForm input:focus,
+#taskForm select:focus {
+    border-color: #2563eb;
+}
+
+#taskForm button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#taskForm button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Mobile Form Layout */
+@media (max-width: 600px) {
+    #taskForm {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Individual Task Cards */
+
+.task-item {
+    background-color: #f8faff;
+    border: 1px solid #dbe5f3;
+    border-radius: 10px;
+    padding: 18px;
+    margin-top: 15px;
+}
+
+.task-item h3 {
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+.task-item p {
+    margin-bottom: 8px;
+    color: #64748b;
+}
+
+.task-item button {
+    padding: 9px 14px;
+    margin: 8px 8px 0 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.task-item button:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* Weekly Planner Form */
+
+#plannerForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 22px;
+}
+
+#plannerForm input,
+#plannerForm select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dbe2ef;
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+}
+
+#plannerForm button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#plannerForm button:hover {
+    background: #1d4ed8;
+}
+
+.study-card {
+    background: #f8faff;
+    padding: 16px;
+    margin-top: 15px;
+    border: 1px solid #dbe5f3;
+    border-radius: 10px;
+}
+
+.study-card h3 {
+    color: #172554;
+    margin-bottom: 8px;
+}
+
+.study-card p {
+    margin-bottom: 6px;
+}
+
+.study-card button {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    #plannerForm {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Progress Tracker */
+
+.overall-progress {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f8faff;
+    border-radius: 10px;
+}
+
+.overall-progress h3,
+.subject-progress h3 {
+    color: #172554;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 14px;
+    background: #dbeafe;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+#overallProgressBar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+    border-radius: 20px;
+    transition: width 0.4s;
+}
+
+#progressText {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.subject-progress {
+    margin-top: 25px;
+}
+
+.subject-item {
+    margin-bottom: 20px;
+}
+
+.subject-item p {
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+.subject-item .progress-bar {
+    margin-bottom: 0;
+}
+
+.subject-item .progress-bar div {
+    height: 100%;
+    background: #2563eb;
+    border-radius: 20px;
+}
+
+.task-item button:first-of-type {
+    background-color: #7c3aed;
+}
+
+.task-item button:first-of-type:hover {
+    background-color: #6d28d9;
+}
+
+
+/* Circular Progress Design */
+
+.overall-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 28px;
+    background: linear-gradient(135deg, #f8faff, #eef2ff);
+    border-radius: 16px;
+    margin-top: 20px;
+}
+
+.progress-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.progress-heading p {
+    color: #64748b;
+    margin-top: 8px;
+}
+
+.circular-progress {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: conic-gradient(
+        #2563eb 0%,
+        #7c3aed 33%,
+        #dbeafe 33%,
+        #dbeafe 100%
+    );
+
+    transition: background 0.5s ease;
+}
+
+.progress-inner {
+    width: 140px;
+    height: 140px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#progressPercentage {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.progress-inner small {
+    color: #64748b;
+    margin-top: 5px;
+}
+
+#progressText {
+    margin-top: 18px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+
+/* Subject Progress Cards */
+
+.subject-item {
+    background: white;
+    padding: 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.subject-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.subject-item p {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.subject-item .progress-bar {
+    height: 10px;
+    border-radius: 20px;
+    background: #e2e8f0;
+    overflow: hidden;
+}
+
+.subject-item .progress-bar div {
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+    transition: width 0.5s ease;
+}
+
+#currentDate {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* UPCOMING DEADLINES - PREMIUM CARD DESIGN */
+
+#deadlineList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 18px;
+}
+
+.upcoming-task-card {
+    background: linear-gradient(135deg, #f8faff, #eef2ff);
+    border: 1px solid #dbe4ff;
+    border-left: 5px solid #6366f1;
+    border-radius: 12px;
+    padding: 18px;
+    transition: 0.3s ease;
+    box-shadow: 0 3px 10px rgba(30, 50, 100, 0.06);
+}
+
+.upcoming-task-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(30, 50, 100, 0.12);
+}
+
+.upcoming-task-card h3 {
+    color: #172554;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.upcoming-task-card p {
+    color: #475569;
+    font-size: 13px;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+/* Priority indicators */
+
+.upcoming-task-card.high-priority {
+    border-left-color: #ef4444;
+}
+
+.upcoming-task-card.medium-priority {
+    border-left-color: #f59e0b;
+}
+
+.upcoming-task-card.low-priority {
+    border-left-color: #22c55e;
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+/* Tablets and smaller laptops */
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 190px;
+        padding: 25px 15px;
+    }
+
+    .main-content {
+        padding: 25px 20px;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        position: relative;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 15px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .sidebar nav a {
+        padding: 9px;
+        font-size: 12px;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 20px;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .task-form,
+    #plannerForm {
+        grid-template-columns: 1fr;
+    }
+
+    .task-item {
+        padding: 15px;
+    }
+
+    #deadlineList {
+        grid-template-columns: 1fr;
+    }
+
+    .upcoming-task-card {
+        width: 100%;
+    }
+
+    .planner-section,
+    .progress-section,
+    .tasks-section {
+        padding: 15px;
+    }
+
+}
+
+/* MOBILE STATISTICS LAYOUT */
+
+@media (max-width: 600px) {
+
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .stat-card {
+        min-width: 0;
+        padding: 15px;
+    }
+
+    .stat-card h3 {
+        font-size: 13px;
+    }
+
+    .stat-card p {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .sidebar nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .sidebar nav a {
+        text-align: center;
+        font-size: 13px;
+    }
+
+}
+/* Footer Styling */
+.footer {
+    margin-top: 35px;
+    padding: 30px 20px;
+    text-align: center;
+    background: #172554;
+    color: white;
+    border-radius: 12px;
+}
+
+.footer h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #dbeafe;
+    font-size: 13px;
+    margin: 8px 0;
+}
+
+.footer .team-name {
+    color: #a5b4fc;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.footer .copyright {
+    font-size: 11px;
+    opacity: 0.7;
+    margin-top: 15px;
+}
+/* =================================
+   STUDYSYNC UI ANIMATIONS
+================================= */
+
+/* Card hover effects */
+.task-item,
+.study-card,
+.upcoming-task-card {
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.task-item:hover,
+.study-card:hover,
+.upcoming-task-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
+}
+
+/* Button animations */
+button {
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Progress bar animation */
+.progress-bar div {
+    transition: width 0.8s ease;
+}
+
+/* Dashboard entrance animation */
+.stat-card,
+.tasks-section,
+.planner-section,
+.progress-section {
+    animation: fadeIn 0.6s ease both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =================================
+   STUDYSYNC - MIDNIGHT DARK THEME
+   ================================= */
+
+body {
+    background: #0b1020;
+    color: #e2e8f0;
+}
+
+.app {
+    background: #0b1020;
+}
+
+/* Sidebar */
+.sidebar {
+    background: linear-gradient(180deg, #111827, #1e1b4b);
+    color: #f8fafc;
+}
+
+.sidebar h2 {
+    color: #ffffff;
+}
+
+.sidebar nav a {
+    color: #cbd5e1;
+}
+
+.sidebar nav a:hover {
+    background: #312e81;
+    color: #ffffff;
+}
+
+/* Main dashboard */
+.main-content {
+    background: #0b1020;
+    color: #e2e8f0;
+}
+
+/* Header */
+.topbar {
+    color: #f1f5f9;
+}
+
+/* Welcome banner */
+.welcome {
+    background: linear-gradient(120deg, #4f46e5, #7c3aed);
+    color: white;
+}
+
+/* Dashboard cards */
+.stat-card,
+.tasks-section,
+.planner-section,
+.progress-section {
+    background: #151d30;
+    color: #e2e8f0;
+    border: 1px solid #29364d;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+
+/* Task and planner cards */
+.task-item,
+.study-card,
+.upcoming-task-card,
+.subject-item {
+    background: #1e293b;
+    color: #e2e8f0;
+    border: 1px solid #334155;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    color: #f8fafc;
+}
+
+/* Descriptions */
+p {
+    color: #b6c4d8;
+}
+
+/* Input fields */
+input,
+select,
+textarea {
+    background: #0f172a;
+    color: #f8fafc;
+    border: 1px solid #475569;
+    border-radius: 8px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #818cf8;
+    box-shadow: 0 0 0 3px rgba(129,140,248,0.15);
+}
+
+/* Progress tracker */
+.subject-item .progress-bar {
+    background: #334155;
+}
+
+/* Buttons */
+button {
+    transition: 0.3s ease;
+}
+
+button:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background: #111827;
+    color: #e2e8f0;
+    border-top: 1px solid #29364d;
+}
+
+/* Scrollbar */
+* {
+    scrollbar-color: #475569 #0b1020;
+}
+
+
+/* =====================================
+   MIDNIGHT JELLYFISH - TEXT COLOUR FIX
+   ===================================== */
+
+/* Main headings */
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.sidebar h2 {
+    color: #f1f5ff !important;
+}
+
+/* General text */
+.main-content p,
+.task-item p,
+.study-card p,
+.upcoming-task-card p,
+.subject-item p {
+    color: #cbd5e1 !important;
+}
+
+/* Task titles */
+.task-item h3,
+.study-card h3,
+.upcoming-task-card h3 {
+    color: #a5b4fc !important;
+}
+
+/* Dashboard statistics */
+.stat-card h3 {
+    color: #c4b5fd !important;
+}
+
+.stat-card p {
+    color: #67e8f9 !important;
+}
+
+/* Form labels and fields */
+label {
+    color: #cbd5e1 !important;
+}
+
+input,
+select,
+textarea {
+    color: #f8fafc !important;
+    background-color: #111827 !important;
+    border-color: #475569 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* Navigation */
+.sidebar nav a {
+    color: #c4d2ee !important;
+}
+
+/* Progress information */
+#progressText,
+#progressPercentage,
+#overallProgressBar,
+.subject-item {
+    color: #67e8f9;
+}
+
+/* Footer */
+.footer,
+.footer p,
+.footer h2 {
+    color: #e2e8f0 !important;
+}
+
+/* Buttons */
+button {
+    color: #ffffff;
+}
+
+/* Upcoming deadline titles */
+.upcoming-task-card h3 {
+    color: #a5b4fc !important;
+}
+
+
+
+/* ==========================================
+   MIDNIGHT JELLYFISH - VISUAL ENHANCEMENTS
+   ========================================== */
+
+/* UPCOMING DEADLINES */
+.upcoming-task-card {
+    background: linear-gradient(135deg, #202b45, #252044) !important;
+    border: 1px solid #465078 !important;
+    border-left: 4px solid #a78bfa !important;
+    border-radius: 13px;
+    padding: 18px !important;
+    box-shadow: 0 5px 18px rgba(99, 102, 241, 0.10);
+    transition: 0.3s ease;
+}
+
+.upcoming-task-card:hover {
+    transform: translateY(-4px);
+    border-color: #818cf8 !important;
+    box-shadow: 0 8px 24px rgba(129, 140, 248, 0.20);
+}
+
+.upcoming-task-card h3 {
+    color: #c4b5fd !important;
+}
+
+/* OVERALL PROGRESS PANEL */
+.progress-section > div:first-of-type {
+    background: linear-gradient(135deg, #202b45, #252044) !important;
+    border: 1px solid #48558a !important;
+    border-radius: 16px;
+    box-shadow: 0 6px 22px rgba(99, 102, 241, 0.12);
+}
+
+.progress-section > div:first-of-type h3 {
+    color: #e9d5ff !important;
+}
+
+.progress-section > div:first-of-type p {
+    color: #cbd5e1 !important;
+}
+
+/* PROGRESS PERCENTAGE */
+#progressPercentage {
+    color: #67e8f9 !important;
+    font-weight: 800;
+}
+
+#progressText {
+    color: #a5b4fc !important;
+    font-weight: 600;
+}
+
+/* SUBJECT-WISE PROGRESS */
+.subject-item {
+    background: linear-gradient(120deg, #202b45, #1c2540) !important;
+    border: 1px solid #465078 !important;
+    border-radius: 12px;
+    padding: 16px !important;
+    margin-bottom: 12px;
+    transition: 0.3s ease;
+}
+
+.subject-item:hover {
+    border-color: #818cf8 !important;
+    transform: translateY(-2px);
+}
+
+.subject-item p {
+    color: #e0e7ff !important;
+    font-weight: 600;
+}
+
+/* PROGRESS BAR TRACK */
+.subject-item .progress-bar {
+    background: #334155 !important;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* PROGRESS BAR FILL */
+.subject-item .progress-bar > div {
+    background: linear-gradient(
+        90deg,
+        #3b82f6,
+        #8b5cf6,
+        #c084fc
+    ) !important;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.35);
+}
+
+/* JELLYFISH ACCENT COLOURS */
+.upcoming-task-card.high-priority {
+    border-left-color: #fb7185 !important;
+}
+
+.upcoming-task-card.medium-priority {
+    border-left-color: #fbbf24 !important;
+}
+
+.upcoming-task-card.low-priority {
+    border-left-color: #34d399 !important;
+}
+
+
+
+/* ===================================
+   STUDYSYNC - NEON AURORA CARD THEME
+   =================================== */
+
+/* DASHBOARD STAT CARDS */
+.stat-card:nth-child(1) {
+    background: linear-gradient(135deg, #1e3a5f, #243b70) !important;
+    border: 1px solid #3b82f6 !important;
+}
+
+.stat-card:nth-child(2) {
+    background: linear-gradient(135deg, #39285f, #493078) !important;
+    border: 1px solid #8b5cf6 !important;
+}
+
+.stat-card:nth-child(3) {
+    background: linear-gradient(135deg, #174b4a, #17635c) !important;
+    border: 1px solid #2dd4bf !important;
+}
+
+.stat-card:nth-child(4) {
+    background: linear-gradient(135deg, #58304c, #713653) !important;
+    border: 1px solid #ec4899 !important;
+}
+
+.stat-card h3,
+.stat-card p {
+    color: #ffffff !important;
+}
+
+/* TASK CARDS */
+.task-item {
+    background: linear-gradient(135deg, #292044, #302654) !important;
+    border: 1px solid #7054a5 !important;
+}
+
+.task-item h3 {
+    color: #d8b4fe !important;
+}
+
+/* UPCOMING DEADLINES */
+.upcoming-task-card:nth-child(1) {
+    background: linear-gradient(135deg, #49304d, #63344f) !important;
+    border-color: #ec4899 !important;
+}
+
+.upcoming-task-card:nth-child(2) {
+    background: linear-gradient(135deg, #49391f, #5b4825) !important;
+    border-color: #fbbf24 !important;
+}
+
+.upcoming-task-card:nth-child(3) {
+    background: linear-gradient(135deg, #174b4a, #1c5c54) !important;
+    border-color: #2dd4bf !important;
+}
+
+.upcoming-task-card h3,
+.upcoming-task-card p {
+    color: #ffffff !important;
+}
+
+/* WEEKLY PLANNER */
+.planner-section {
+    background: linear-gradient(135deg, #142d39, #183c45) !important;
+    border-color: #2dd4bf !important;
+}
+
+.study-card {
+    background: linear-gradient(135deg, #174b4a, #205a57) !important;
+    border-color: #2dd4bf !important;
+}
+
+.study-card h3 {
+    color: #99f6e4 !important;
+}
+
+/* PROGRESS SECTION */
+.progress-section {
+    background: linear-gradient(135deg, #252044, #30264f) !important;
+    border-color: #a78bfa !important;
+}
+
+/* PROGRESS SUMMARY */
+.progress-section > div:first-of-type {
+    background: linear-gradient(135deg, #352554, #49316a) !important;
+    border-color: #a78bfa !important;
+}
+
+/* SUBJECT CARDS */
+.subject-item:nth-child(1) {
+    background: linear-gradient(135deg, #1e3a5f, #243b70) !important;
+    border-color: #60a5fa !important;
+}
+
+.subject-item:nth-child(2) {
+    background: linear-gradient(135deg, #39285f, #493078) !important;
+    border-color: #a78bfa !important;
+}
+
+.subject-item:nth-child(3) {
+    background: linear-gradient(135deg, #174b4a, #205a57) !important;
+    border-color: #2dd4bf !important;
+}
+
+.subject-item p {
+    color: #ffffff !important;
+}
+
+/* SMOOTH HOVER EFFECT */
+.stat-card,
+.task-item,
+.study-card,
+.subject-item,
+.upcoming-task-card {
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover,
+.task-item:hover,
+.study-card:hover,
+.subject-item:hover,
+.upcoming-task-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Keep outer sections consistent with My Tasks */
+
+.tasks-section,
+.upcoming-section,
+.deadlines-section,
+.planner-section,
+.progress-section {
+    background: #151e31 !important;
+    border: 1px solid #2b3b56 !important;
+    border-radius: 12px;
+}
+
+/* Keep colourful inner cards unchanged */
+
+
+
+/* Softer colours for inner cards */
+
+/* Upcoming Deadlines - soft pink */
+.upcoming-task-card {
+    background: #382b49 !important;
+    border-color: #a45c9b !important;
+}
+
+/* Weekly Planner - soft teal */
+#studyList > div {
+    background: #243d49 !important;
+    border-color: #42cfc0 !important;
+}
+
+/* My Progress - soft purple */
+.progress-section .progress-card,
+.progress-section .subject-progress-card {
+    background: #302b4b !important;
+    border-color: #9675d9 !important;
+}
+
+/* Smooth card appearance */
+.upcoming-task-card,
+#studyList > div,
+.progress-section .progress-card,
+.progress-section .subject-progress-card {
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+
+
+/* Upcoming Deadlines - priority colours */
+
+.upcoming-task-card.high-priority {
+    background: #493044 !important;
+    border: 1px solid #ff7185 !important;
+}
+
+.upcoming-task-card.medium-priority {
+    background: #493b2c !important;
+    border: 1px solid #ffb454 !important;
+}
+
+.upcoming-task-card.low-priority {
+    background: #24433e !important;
+    border: 1px solid #52d6ad !important;
+}
+
+/* Upcoming card text */
+.upcoming-task-card h3 {
+    color: #ffffff !important;
+}
+
+.upcoming-task-card p {
+    color: #e5e7f0 !important;
+}
+
+/* My Progress */
+.progress-section .progress-card {
+    background: #302b4b !important;
+    border: 1px solid #9675d9 !important;
+}
+
+.progress-section .subject-progress-card {
+    background: #283654 !important;
+    border: 1px solid #718cff !important;
+}
+
+.progress-section h3,
+.progress-section h4,
+.progress-section p,
+.progress-section label {
+    color: #edf0ff !important;
+}
+
+
+
+/* =================================
+   STUDYSYNC - FINAL VISUAL POLISH
+================================= */
+
+/* 1. Upcoming deadline hover effects */
+
+.upcoming-task-card {
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.upcoming-task-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.upcoming-task-card.high-priority:hover {
+    box-shadow: 0 0 16px rgba(255, 113, 133, 0.2);
+}
+
+.upcoming-task-card.medium-priority:hover {
+    box-shadow: 0 0 16px rgba(255, 180, 84, 0.2);
+}
+
+.upcoming-task-card.low-priority:hover {
+    box-shadow: 0 0 16px rgba(82, 214, 173, 0.2);
+}
+
+
+/* 2. Weekly planner cards */
+
+#studyList > div {
+    transition: all 0.3s ease;
+}
+
+#studyList > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(66, 207, 192, 0.15);
+}
+
+
+/* 3. Progress cards */
+
+.progress-section .progress-card,
+.progress-section .subject-progress-card {
+    transition: all 0.3s ease;
+}
+
+.progress-section .progress-card:hover,
+.progress-section .subject-progress-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(150, 117, 217, 0.18);
+}
+
+
+/* 4. Better input focus effects */
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #8b70ff !important;
+    box-shadow: 0 0 0 3px rgba(139, 112, 255, 0.18);
+    transition: all 0.2s ease;
+}
+
+
+/* 5. Better button effects */
+
+button {
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* 6. Smooth scrolling */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* 7. Consistent card corners */
+
+.task-item,
+.upcoming-task-card,
+#studyList > div,
+.progress-section .subject-progress-card {
+    border-radius: 11px;
+}
+
+
+
+/* ==========================================
+   STUDYSYNC - GLOBAL GLOW & ACCENT DESIGN
+========================================== */
+
+/* 1. Task cards */
+.task-item {
+    border-left: 4px solid #a875ff !important;
+    box-shadow: 0 3px 14px rgba(168, 117, 255, 0.12);
+    transition: all 0.3s ease;
+}
+
+.task-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(168, 117, 255, 0.25);
+}
+
+
+/* 2. Upcoming deadline cards */
+.upcoming-task-card {
+    border-left-width: 4px !important;
+    border-left-style: solid !important;
+    transition: all 0.3s ease;
+}
+
+.upcoming-task-card.high-priority {
+    border-left-color: #ff7185 !important;
+    box-shadow: 0 3px 14px rgba(255, 113, 133, 0.12);
+}
+
+.upcoming-task-card.medium-priority {
+    border-left-color: #ffb454 !important;
+    box-shadow: 0 3px 14px rgba(255, 180, 84, 0.12);
+}
+
+.upcoming-task-card.low-priority {
+    border-left-color: #52d6ad !important;
+    box-shadow: 0 3px 14px rgba(82, 214, 173, 0.12);
+}
+
+
+/* 3. Weekly planner cards */
+#studyList > div {
+    border-left: 4px solid #42cfc0 !important;
+    box-shadow: 0 3px 14px rgba(66, 207, 192, 0.13);
+    transition: all 0.3s ease;
+}
+
+
+/* 4. Statistics cards */
+.stat-card {
+    border-left: 4px solid #559cff !important;
+    box-shadow: 0 3px 15px rgba(85, 156, 255, 0.12);
+    transition: all 0.3s ease;
+}
+
+.stat-card:nth-child(2) {
+    border-left-color: #a875ff !important;
+}
+
+.stat-card:nth-child(3) {
+    border-left-color: #42cfc0 !important;
+}
+
+.stat-card:nth-child(4) {
+    border-left-color: #ff65b5 !important;
+}
+
+
+/* 5. Overall progress card */
+.progress-section .progress-card {
+    border-left: 4px solid #b18aff !important;
+    box-shadow: 0 3px 16px rgba(177, 138, 255, 0.15);
+}
+
+
+/* 6. Subject-wise progress cards */
+.progress-section .subject-progress-card {
+    border-left: 4px solid #559cff !important;
+    box-shadow: 0 3px 14px rgba(85, 156, 255, 0.13);
+    transition: all 0.3s ease;
+}
+
+.progress-section .subject-progress-card:nth-of-type(even) {
+    border-left-color: #bd83ff !important;
+}
+
+
+/* 7. Universal hover glow */
+.task-item:hover,
+.upcoming-task-card:hover,
+#studyList > div:hover,
+.stat-card:hover,
+.progress-section .progress-card:hover,
+.progress-section .subject-progress-card:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.08);
+}
+
+/* 8. Smooth appearance */
+.task-item,
+.upcoming-task-card,
+#studyList > div,
+.stat-card,
+.progress-section .progress-card,
+.progress-section .subject-progress-card {
+    border-radius: 11px;
+}
+
+
+
+/* ======================================
+   FIX: UPCOMING DEADLINES PRIORITY CARDS
+====================================== */
+
+/* Common styling for all deadline cards */
+.upcoming-task-card {
+    border-left: 5px solid !important;
+    border-radius: 11px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* HIGH PRIORITY - Coral Pink */
+.upcoming-task-card.high-priority {
+    background: #493044 !important;
+    border: 1px solid #ff7185 !important;
+    border-left: 5px solid #ff7185 !important;
+    box-shadow: 0 0 12px rgba(255, 113, 133, 0.18) !important;
+}
+
+/* MEDIUM PRIORITY - Amber */
+.upcoming-task-card.medium-priority {
+    background: #493b2c !important;
+    border: 1px solid #ffb454 !important;
+    border-left: 5px solid #ffb454 !important;
+    box-shadow: 0 0 12px rgba(255, 180, 84, 0.18) !important;
+}
+
+/* LOW PRIORITY - Mint */
+.upcoming-task-card.low-priority {
+    background: #24433e !important;
+    border: 1px solid #52d6ad !important;
+    border-left: 5px solid #52d6ad !important;
+    box-shadow: 0 0 12px rgba(82, 214, 173, 0.18) !important;
+}
+
+/* Hover glow */
+.upcoming-task-card:hover {
+    transform: translateY(-4px);
+}
+
+.upcoming-task-card.high-priority:hover {
+    box-shadow: 0 0 22px rgba(255, 113, 133, 0.35) !important;
+}
+
+.upcoming-task-card.medium-priority:hover {
+    box-shadow: 0 0 22px rgba(255, 180, 84, 0.35) !important;
+}
+
+.upcoming-task-card.low-priority:hover {
+    box-shadow: 0 0 22px rgba(82, 214, 173, 0.35) !important;
+}
+
+/* Readable text */
+.upcoming-task-card h3 {
+    color: #ffffff !important;
+}
+
+.upcoming-task-card p {
+    color: #e5e7f0 !important;
+}
+
+
+
+/* Calendar icon visibility - StudySync */
+
+#taskDeadline {
+    color-scheme: dark !important;
+    background-color: #111a2b !important;
+    color: #edf0ff !important;
+    border: 1px solid #52617c !important;
+    padding: 10px !important;
+}
+
+#taskDeadline::-webkit-calendar-picker-indicator {
+    opacity: 1 !important;
+    visibility: visible !important;
+    filter: brightness(0) invert(1) !important;
+    cursor: pointer !important;
+    width: 18px;
+    height: 18px;
+}

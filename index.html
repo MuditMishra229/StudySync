@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudySync - Student Study Planner</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>StudySync</h2>
+
+        <nav>
+            <a href="#dashboard">
+    <span class="nav-icon">⌂</span> Dashboard
+</a>
+
+<a href="#tasks">
+    <span class="nav-icon">✓</span> My Tasks
+</a>
+
+<a href="#planner">
+    <span class="nav-icon">▦</span> Weekly Planner
+</a>
+
+<a href="#progress">
+    <span class="nav-icon">◉</span> My Progress
+</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="dashboard">
+
+        <header class="topbar">
+            <h2>Student Dashboard</h2>
+            <p id="currentDate"></p>
+            <p>Welcome back, Student!</p>
+        </header>
+
+        <section class="welcome">
+            <h1>Plan your day. Achieve your goals.</h1>
+            <p>Organize your studies and stay productive with StudySync.</p>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <h3>Total Tasks</h3>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Completed</h3>
+                <p id="completedTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Productivity</h3>
+                <p id="productivity">0%</p>
+            </div>
+
+        </section>
+
+        
+<section id="tasks" class="tasks-section">
+
+    <h2>My Tasks</h2>
+    <p>Add and manage your academic activities.</p>
+
+    <form id="taskForm">
+
+        <input
+            type="text"
+            id="taskTitle"
+            placeholder="Enter task name"
+            required
+        >
+
+        <input
+            type="text"
+            id="taskSubject"
+            placeholder="Enter subject"
+            required
+        >
+
+        <input
+            type="date"
+            id="taskDeadline"
+            required
+        >
+
+        <select id="taskPriority" required>
+            <option value="">Select Priority</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+
+        <button type="submit">Add Task</button>
+
+    </form>
+
+    <div id="taskList">
+        <!-- Tasks will appear here -->
+    </div>
+
+</section>
+
+        <!-- Upcoming Deadlines -->
+<section id="upcomingDeadlines" class="planner-section">
+
+    <h2>Upcoming Deadlines</h2>
+
+    <p>Stay on top of your academic tasks.</p>
+
+    <div id="deadlineList">
+        <p>No upcoming deadlines.</p>
+    </div>
+
+</section>
+<section id="planner" class="planner-section">
+
+    <h2>Weekly Planner</h2>
+    <p>Plan your study sessions for the week.</p>
+
+    <form id="plannerForm">
+
+        <select id="studyDay" required>
+            <option value="">Select Day</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+            <option>Sunday</option>
+        </select>
+
+        <input
+            type="text"
+            id="studySubject"
+            placeholder="Enter subject"
+            required
+        >
+
+        <input
+            type="text"
+            id="studyTopic"
+            placeholder="Enter study topic"
+            required
+        >
+
+        <input
+    type="text"
+    id="studyTime"
+    placeholder="Enter time (e.g. 4:30 PM)"
+    required
+>
+
+        <button type="submit">Add Study Session</button>
+
+    </form>
+
+    <div id="studyList"></div>
+
+</section>
+
+
+        
+<section id="progress" class="progress-section">
+
+    <h2>My Progress</h2>
+
+    <p>Track your academic productivity here.</p>
+
+    
+<div class="overall-progress">
+
+    <div class="progress-heading">
+        <h3>Overall Task Completion</h3>
+        <p>Keep moving towards your goals!</p>
+    </div>
+
+    <div class="circular-progress" id="circularProgress">
+        <div class="progress-inner">
+            <span id="progressPercentage">0%</span>
+            <small>Completed</small>
+        </div>
+    </div>
+
+    <p id="progressText">0% Completed</p>
+
+</div>
+
+    <div class="subject-progress">
+
+        <h3>Subject-wise Progress</h3>
+
+        <div id="subjectProgress">
+            <!-- Subject progress will appear here -->
+        </div>
+
+    </div>
+
+</section>
+
+
+    </main>
+<!-- Footer -->
+<footer class="footer">
+    <h3>StudySync</h3>
+    <p>Stay focused. Stay organized. Keep growing.</p>
+    <p class="team-name">Developed by ByteBuilders</p>
+    <p class="copyright">
+        © 2026 StudySync. All rights reserved.
+    </p>
+</footer>
+
+</div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
